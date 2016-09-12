@@ -30,20 +30,19 @@ public class QuestionsAnswersTest {
 	@Test
 	public void testingAnswer(){
 
-		String question = "Name all the planets in the solar system";
-		questions.put(question, "Mercury");
-		questions.put(question, "Venus");
-		questions.put(question, "Earth");
-		questions.put(question, "Mars");
-		questions.put(question, "Jupiter");
-		questions.put(question, "Saturn");
-		questions.put(question, "Uranus");
-		questions.put(question, "Neptune");
+		String question1 = "What color is the sun";
+	    String question2 = "What company is named after a fruit";
+	    String question3 = "What color are flamingo's feathurs?";
+	    String answer1 = "yellow";
+	    String answer2 = "apple";
+	    String answer3 = "pink";
+	    questions.put(question1, answer1);
+	    questions.put(question2, answer2);
+	    questions.put(question3, answer3);
 
-
-		assertEquals(false, questions.testAnswer(question, "Pluto"));
-		assertEquals(true, questions.testAnswer(question, "Mercury"));
-		assertEquals(false, questions.testAnswer(question, ""));
+		assertEquals(false, questions.testAnswer(question1, answer2));
+		assertEquals(true, questions.testAnswer(question2, answer2));
+		assertEquals(false, questions.testAnswer(question3, ""));
 	}
 
 }

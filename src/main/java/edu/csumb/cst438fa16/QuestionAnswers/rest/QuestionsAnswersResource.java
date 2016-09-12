@@ -16,25 +16,24 @@ public class QuestionsAnswersResource{
 
     // Create QuestionsAnswers object
     QuestionsAnswers object = new QuestionsAnswers();
-
+    
     // This will allow us to set the values in for the string
-    public void QuestionsAnswersResource(){
+    public QuestionsAnswersResource(){
+    
 
     // Add 3 questions and answers
-    String question1 = "What color is the sun";
-    String question2 = "What company is named after a fruit";
-    String question3 = "What color are flamingo's feathurs?";
+    String question1 = "What color is the sun?";
+    String question2 = "What company is named after a fruit?";
+    String question3 = "What color are flamingo's feathers?";
     String answer1 = "yellow";
     String answer2 = "apple";
     String answer3 = "pink";
     object.put(question1, answer1);
     object.put(question2, answer2);
     object.put(question3, answer3);
+    
   }
-    //questionsAnswers.put("What color is the sun?", "yellow");
-    //questionsAnswers.put("What company is name after a fruit?", "apple");
-    //questionsAnswers.put("What color are flamingo's feathures?", "pink");
-
+    
     @GET
     @Path("/randomquestion")
     public String randomQuestion(){

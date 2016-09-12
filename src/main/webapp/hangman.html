@@ -5,17 +5,18 @@
 </head>
 <body>
 
-<div>Word: <span id="pattern"></span></div>
-<div>Guesses: <span id="oldGuesses"></span></div>
-<div>Letter? <input id="newGuesses" type="text" />
+<div>Question: <span id="question"></span></div>
+<div> <input id="answer" type="text" />
              <button id="submit">Submit</button></div>
 <div id="fail"></div>
 
 <script>
 function guess() {
-  var oldPattern = $("#pattern").text();
-  var oldGuesses = $("#oldGuesses").text();
-  var newGuesses = $("#newGuesses").val();
+  var answer = $("#answer").val(); 
+  
+  //var oldPattern = $("#pattern").text();
+  //var oldGuesses = $("#oldGuesses").text();
+  //var newGuesses = $("#newGuesses").val();
   /*
   $.get("/rest/match",
         { oldPattern: oldPattern, oldGuesses: oldGuesses, newGuesses: newGuesses },
