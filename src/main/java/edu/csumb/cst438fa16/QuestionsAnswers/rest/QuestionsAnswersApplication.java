@@ -1,4 +1,4 @@
-package edu.csumb.cst438fa16.hangman.rest;
+package edu.csumb.cst438fa16.QuestionsAnaswers.rest;
 
 import javax.ws.rs.core.Application;
 import javax.ws.rs.ApplicationPath;
@@ -10,5 +10,5 @@ import javax.ws.rs.ApplicationPath;
  * http://stackoverflow.com/a/26721737
  */
 @ApplicationPath("rest")
-public class HangmanApplication extends Application {
+public class QuestionsAnswersApplication extends Application {
 }
