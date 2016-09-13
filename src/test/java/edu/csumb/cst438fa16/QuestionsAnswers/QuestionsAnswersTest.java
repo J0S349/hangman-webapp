@@ -32,7 +32,7 @@ public class QuestionsAnswersTest {
 
 		String question1 = "What color is the sun";
 	    String question2 = "What company is named after a fruit";
-	    String question3 = "What color are flamingo's feathurs?";
+	    String question3 = "What color are flamingo's feathurs";
 	    String answer1 = "yellow";
 	    String answer2 = "apple";
 	    String answer3 = "pink";

@@ -1,0 +1,45 @@
+<!doctype html>
+<head>
+<title>Hangman</title>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</head>
+<body>
+
+<div>Question: <span id="question"></span></div>
+<div> <input id="answer" type="text" />
+             <button id="submit" onclick="guess()">Submit</button></div>
+<div id="result"></div>
+
+<script>
+function guess() {
+  var answer = $("#answer").val();
+  var question = $("#question").text();
+
+  $.get("/rest/testanswer", {question: question, answer: answer},
+    function(results) {
+        $("#result").text(results);
+        $("#answer").val("");
+        $("#question").focus();
+
+    })
+    .fail(function(jqXHR, textStatus, errorThrown) {
+      $("#result").text("'" + answer + "' is not the correct answer to '" +
+                      question + "'");
+    });
+    $.get("/rest/randomquestion", function(randomQuestion){
+       $("#question").text(randomQuestion);
+       //$("#question").append("?");
+    });
+  };
+
+$(function(){
+  $.get("/rest/randomquestion", function(randomQuestion){
+     $("#question").text(randomQuestion);
+     //$("#question").append("?");
+  });
+});
+
+</script>
+
+</body>
+</html>

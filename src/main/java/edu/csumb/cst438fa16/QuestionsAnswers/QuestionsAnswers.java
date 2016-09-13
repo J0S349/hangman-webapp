@@ -2,9 +2,8 @@ package edu.csumb.cst438fa16.QuestionsAnswers;
 import java.util.*;
 public class QuestionsAnswers {
 	// make a dictionary that has the question as the key and the answer(s) as the values.
-	// The first parameter is a string, the second parameter is a hashset of strings
+	// The first parameter is a string, the second parameter is a HashSet of strings
 	HashMap<String, String> questions_answers = new HashMap<String, String>();
-
 
 	/**
 	*	Maps question to answer.
@@ -16,7 +15,7 @@ public class QuestionsAnswers {
 			return;
 		}
 		
-		// Check to make sure the same questions isn't already in the Hashmap
+		// Check to make sure the same questions isn't already in the HashMap
 		if(!questions_answers.containsKey(question))
 		{
 			questions_answers.put(question, answer); 
@@ -32,7 +31,7 @@ public class QuestionsAnswers {
 			return false;
 		}
 		else {
-			return questions_answers.get(question).equals(answer); 
+			return questions_answers.get(question).equalsIgnoreCase(answer); 
 		}
 	}
 	/**

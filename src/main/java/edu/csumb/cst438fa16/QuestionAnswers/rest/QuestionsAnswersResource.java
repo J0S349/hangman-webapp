@@ -19,12 +19,11 @@ public class QuestionsAnswersResource{
     
     // This will allow us to set the values in for the string
     public QuestionsAnswersResource(){
-    
-
+   
     // Add 3 questions and answers
-    String question1 = "What color is the sun?";
-    String question2 = "What company is named after a fruit?";
-    String question3 = "What color are flamingo's feathers?";
+    String question1 = "What color is the sun";
+    String question2 = "What company is named after a fruit";
+    String question3 = "What color are flamingo's feathers";
     String answer1 = "yellow";
     String answer2 = "apple";
     String answer3 = "pink";
@@ -53,12 +52,12 @@ public class QuestionsAnswersResource{
                         "question, answer").build();
         }
 
-        if(object.testAnswer(question, answer) == true)
+        if(object.testAnswer(question, answer))
         {
-            return Response.ok("This is a valid question and answer").build();
+            return Response.ok("'" + answer + "' is the correct answer to '" + question + "'").build();
         }
         return Response.status(Response.Status.BAD_REQUEST)
-            .entity("Question and answer doesn't match").build();
+            .entity("'" + answer + "' is not the correct answer to '" + question + "'").build();
     }
 
 }

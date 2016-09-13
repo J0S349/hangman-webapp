@@ -28,15 +28,15 @@ public class QuestionsAnswersResourceTest extends JerseyTest {
       }
 
     
-      // create the object here to be used across the Junit test
+      // create the object here to be used across the JUnit test
       QuestionsAnswers object = new QuestionsAnswers();
 
 
     @Test
     public void testingRandomQuestion(){
-		String question1 = "What color is the sun?";
-		String question2 = "What company is named after a fruit?";
-		String question3 = "What color are flamingo's feathers?";
+		String question1 = "What color is the sun";
+		String question2 = "What company is named after a fruit";
+		String question3 = "What color are flamingo's feathers";
 		
       WebTarget webTarget = target("randomquestion");
       
@@ -84,9 +84,11 @@ public class QuestionsAnswersResourceTest extends JerseyTest {
     
     @Test 
     public void testingTestAnswerWithCorrectParams(){
-    	WebTarget webTarget = target("testanswer").queryParam("question", "What color is the sun?")
+    	String question = "What color is the sun"; 
+    	String answer = "yellow";
+    	WebTarget webTarget = target("testanswer").queryParam("question", "What color is the sun")
     											  .queryParam("answer",  "yellow"); 
     	String testingAnswer = webTarget.request().get(String.class); 
-    	assertThat(testingAnswer, equalTo("This is a valid question and answer")); 
+    	assertThat(testingAnswer, equalTo("'" + answer + "' is the correct answer to '" + question + "'")); 
     }
 }
