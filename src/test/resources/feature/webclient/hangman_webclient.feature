@@ -16,5 +16,5 @@ Feature: Hangman web page
         Given I am on the hangman page
         When I enter "1234"
         Then I see the word "..."
-    
+
 

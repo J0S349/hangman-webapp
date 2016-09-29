@@ -30,7 +30,7 @@ public class hangmanWebclientSteps {
 
     @Given("^I am on the (\\\\w+) page")
     public void onTheHangmanWebPage(String pageName) throws Throwable {
-        System.out.print("Testing in progress for two later matching...............................");
+        //System.out.print("Testing in progress for two later matching...............................");
 
         driver.get("http://localhost:8080/" + pageName + ".html");
     }
@@ -48,10 +48,5 @@ public class hangmanWebclientSteps {
         (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.textToBe(By.id("pattern"), results));
 
-    }
-    @Given("^I am on the hangman page$")
-    public void i_am_on_the_hangman_page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        driver.get("http://localhost:8080/hangman.html");
     }
 }
