@@ -30,7 +30,6 @@ public class hangmanWebclientSteps {
 
     @Given("^I am on the (\\\\w+) page")
     public void onTheHangmanWebPage(String pageName) throws Throwable {
-        //System.out.print("Testing in progress for two later matching...............................");
 
         driver.get("http://localhost:8080/" + pageName + ".html");
     }
@@ -47,6 +46,9 @@ public class hangmanWebclientSteps {
         // Wait for the page to load, timeout after 10 seconds
         (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.textToBe(By.id("pattern"), results));
+        String pattern = driver.findElement(By.id("pattern")).getText();
+
+        assertThat(pattern, equalTo(results));
 
     }
 }
